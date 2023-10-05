@@ -1,0 +1,5 @@
+.vsode
+node_modules
+.env
+DS_Stores
+.json-packages
