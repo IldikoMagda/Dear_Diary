@@ -2,7 +2,7 @@
     display: none;
     position: fixed;
     z-index: 1;
-    padding-top: 100px; /* Location of the box */
+    padding-top: 5vh;
     left: 0;
     top: 0;
     width: 100%;
@@ -14,13 +14,28 @@
   .modal-content {
     background-color: #fefefe;
     margin: auto;
-    padding: 20px;
+    padding: 2vw;
+    height: 80vh;
     border: 1px solid #888;
     width: 80%;
   }
 
+  #close {
+    color: #646262;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+#close:hover,
+#close:focus {
+  color: #ff2424;
+  cursor: pointer;
+}
+
 button {
     position: absolute;
+    padding: 5px;
     right: 10vw;
     height: 10vh;
     min-height: 50px;
