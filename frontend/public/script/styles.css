@@ -63,8 +63,38 @@ ul {
     position: relative;
     border: 1px solid rebeccapurple;
     height: 20vh;
+    min-height: 100px;
     width:50vw;
+    min-width: 200px;
     margin: 2vh;
     display: flex;
     justify-content: center;
+}
+
+.timestamp{
+    position: relative;
+    display: flex;
+    justify-content: right;
+    font-size: 1vw;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.category{
+    position: relative;
+    display: flex;
+    justify-content: right;
+    font-size: 1vw;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.title{
+    position: relative;
+    font-size: 2.5vw;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.content{
+    position: relative;
+    font-size: 1.5vw;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
