@@ -43,6 +43,10 @@ class Entries{
         const updated = await db.query("UPDATE entries SET content = $1 WHERE entry_id =$2 RETURNING *", [newcontent, entry_id])
         return new Entries(updated.rows[0])
     }
+    static async deleteEntry(entry_id){
+        const deleted = await db.query("DELETE FROM entries WHERE entry_id = $1 RETURNING *", [entry_id])
+        return new Entries(deleted.rows[0])
+    }
 }
 
 module.exports = Entries;

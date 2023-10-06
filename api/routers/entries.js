@@ -8,5 +8,6 @@ entriesRouter.get('/byuser/:userid', entriesController.showAllByUserID)
 entriesRouter.get('/ordered', entriesController.showByTime)
 entriesRouter.post('/newentry', entriesController.createEntry)
 entriesRouter.patch('/:entryid', entriesController.updateEntry)
+entriesRouter.delete('/:entryid', entriesController.deleteEntry)
 
 module.exports = entriesRouter
