@@ -7,5 +7,6 @@ entriesRouter.get('/:entryid', entriesController.showOneByEntryID)
 entriesRouter.get('/byuser/:userid', entriesController.showAllByUserID)
 entriesRouter.get('/ordered', entriesController.showByTime)
 entriesRouter.post('/newentry', entriesController.createEntry)
+entriesRouter.patch('/:entryid', entriesController.updateEntry)
 
 module.exports = entriesRouter

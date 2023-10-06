@@ -39,6 +39,10 @@ class Entries{
         let newEntryID = await db.query("INSERT INTO entries(user_id, title, category, content, time_of_entry) VALUES ($1, $2, $3, $4, NOW()) RETURNING *;", [user_id, title,category,content]);
         return new Entries(newEntryID.rows[0])
     }
+    static async updateContent(entry_id, newcontent){
+        const updated = await db.query("UPDATE entries SET content = $1 WHERE entry_id =$2 RETURNING *", [newcontent, entry_id])
+        return new Entries(updated.rows[0])
+    }
 }
 
 module.exports = Entries;
