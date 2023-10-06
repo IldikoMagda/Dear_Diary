@@ -52,8 +52,8 @@ async function loadEntries() {
         category.textContent = entry.category
         category.classList.add("category")
         div.appendChild(timestamp)
-        div.appendChild(title)
         div.appendChild(category)
+        div.appendChild(title)
 // '<div class="entry" value="text-content"><h5>timestamp</h5><h2>TITLE</h2><h4>category</h4></div>'
         div.addEventListener("click",fetchModal)
         entryList.appendChild(div)

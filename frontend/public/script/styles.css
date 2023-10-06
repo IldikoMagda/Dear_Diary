@@ -67,8 +67,6 @@ ul {
     width:50vw;
     min-width: 200px;
     margin: 2vh;
-    display: flex;
-    justify-content: center;
 }
 
 .timestamp{
@@ -88,9 +86,11 @@ ul {
 }
 
 .title{
-    position: relative;
+    position: absolute;
     font-size: 2.5vw;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    padding: auto;
+    top: 1.2rem
 }
 
 .content{
