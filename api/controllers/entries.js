@@ -27,5 +27,41 @@ async function showAllByUserID (req, res){
         res.status(404).json({ error: error.message})
     }
 }
+async function showByTime (req, res){
+    try{
+        const entries = await Entries.orderByTime()
+        res.status(200).json(entries)
+    }catch(error){
+        res.status(500).json({ error: error.message})
+    }
+}
+async function createEntry(req,res){
+    try{
+        let data = req.body;
+        const newEntry = await Entries.createEntry(data)
+        res.status(200).json(newEntry)
+    }catch(error){
+        res.status(404).json({ error: error.message})
+    }
+}
+async function updateEntry(req,res){
+    try{
+        let newcontent = req.body.content;
+        let content_id = req.params.entryid
+        const updated = await Entries.updateContent(content_id, newcontent)
+        res.status(200).json(updated)
+    }catch(error){
+        res.status(404).json({error: error.message})
+    }
+}
+async function deleteEntry(req,res){
+    try{
+        entry_id = parseInt(req.params.entryid); 
+        const deletedEntry = await Entries.deleteEntry(entry_id)
+        res.status(200).json(deletedEntry)
+    }catch(error){
+        res.status(404).json({error: error.message})
+    }
+}
 
-module.exports = { index, showOneByEntryID, showAllByUserID}
+module.exports = { index, showOneByEntryID, showAllByUserID, showByTime, createEntry, updateEntry, deleteEntry}
