@@ -27,5 +27,22 @@ async function showAllByUserID (req, res){
         res.status(404).json({ error: error.message})
     }
 }
+async function showByTime (req, res){
+    try{
+        const entries = await Entries.orderByTime()
+        res.status(200).json(entries)
+    }catch(error){
+        res.status(500).json({ error: error.message})
+    }
+}
+async function createEntry(req,res){
+    try{
+        let data = req.body;
+        const newEntry = await Entries.createEntry(data)
+        res.status(200).json(newEntry)
+    }catch(error){
+        res.status(404).json({ error: error.message})
+    }
+}
 
-module.exports = { index, showOneByEntryID, showAllByUserID}
+module.exports = { index, showOneByEntryID, showAllByUserID, showByTime, createEntry}
